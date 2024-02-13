@@ -71,7 +71,7 @@ export const TitleAndDropdown = () => {
   }, []);
 
   return (
-    <div className="landing-page-gradient-1 relative flex h-max w-screen flex-col items-center font-lora ">
+    <div className="landing-page-gradient-0 relative flex h-max w-screen flex-col items-center font-lora ">
       <div className="absolute left-4 top-4">
         <a href="https://webdev.stengglink.com/GenAI/" target="_self">
           <button className="flex items-center justify-center font-nunito text-lg font-bold ">
@@ -99,7 +99,7 @@ export const TitleAndDropdown = () => {
           </div>
         </div>
       ) : (
-        <div className="mt-5 flex h-min w-11/12 max-w-[1200px] flex-col items-center justify-center rounded-lg border-2 bg-white sm:h-[400px] md:w-9/12 ">
+        <div className="mt-5 flex h-min w-11/12 max-w-[1200px] flex-col items-center justify-center rounded-lg border-2 bg-gray-50 sm:h-[400px] md:w-9/12 ">
           <div className="p-4 text-center text-xl font-bold">
             Start your conversation by selecting the documents you want to
             explore
