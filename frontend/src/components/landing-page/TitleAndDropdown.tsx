@@ -99,21 +99,21 @@ export const TitleAndDropdown = () => {
           </div>
         </div>
       ) : (
-        <div className="mt-5 flex h-min w-11/12 max-w-[1200px] flex-col items-center justify-center rounded-lg border-2 bg-gray-50 sm:h-[400px] md:w-9/12 ">
+        <div className="mt-5 flex h-min w-11/12 max-w-[1200px] flex-col items-center justify-center rounded-lg border-2 bg-sky-50 sm:h-[400px] md:w-9/12 ">
           <div className="p-4 text-center text-xl font-bold">
             Start your conversation by selecting the documents you want to
             explore
           </div>
           <div className="h-1/8 flex w-full flex-wrap items-center justify-center font-nunito">
             <div className="m-1 flex w-96 items-center">
-              <DocumentSelectCombobox
+              <DocumentSelectCombobox 
                 selectedItem={selectedTicker}
                 setSelectedItem={selectTicker}
                 availableDocuments={availableTickers}
                 shouldFocusTicker={shouldFocusCompanySelect}
                 setFocusState={setShouldFocusCompanySelect}
               />
-              <div className="flex h-[41px] w-[40px] items-center justify-center bg-[#F7F7F7] pr-3">
+              <div className="flex h-[41px] w-[40px] items-center justify-center bg-[#F7F7F7] pr-3 ">
                 <span className="mt-1 font-nunito text-[13px] font-bold text-[#7F7F7F]">
                   ⌘K
                 </span>
@@ -216,7 +216,7 @@ export const TitleAndDropdown = () => {
             ))}
           </div>
 
-          <div className="h-1/8 mt-2 flex w-full items-center justify-center rounded-lg bg-gray-00">
+          <div className="h-1/8 mt-2 flex w-full items-center justify-center rounded-lg bg-sky-0">
             <div className="flex flex-wrap items-center justify-center">
               {isDocumentSelectionEnabled && (
                 <>
