@@ -73,7 +73,7 @@ export const TitleAndDropdown = () => {
   return (
     <div className="landing-page-gradient-1 relative flex h-max w-screen flex-col items-center font-lora ">
       <div className="absolute left-4 top-4">
-        <a href="https://www.llamaindex.ai/" target="_blank">
+        <a href="https://webdev.stengglink.com/GenAI/" target="_self">
           <button className="flex items-center justify-center font-nunito text-lg font-bold ">
             <img src="st-engineering.png" className="mx-2 rounded-lg" width={200} />
           </button>
