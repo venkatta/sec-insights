@@ -62,7 +62,7 @@ envVarGroups:
       value: INFO
       previewValue: DEBUG
     - key: BACKEND_CORS_ORIGINS
-      value: '["http://localhost", "http://localhost:8000", "http://localhost:3000", "http://127.0.0.1:3000", "https://llama-app-backend.onrender.com", "https://llama-app-frontend.vercel.app", "http://secinsights.ai", "http://www.secinsights.ai", "https://secinsights.ai", "https://www.secinsights.ai"]'
+      value: '["http://localhost", "http://localhost:8000", "http://localhost:3000", "http://127.0.0.1:3000", "https://llama-app-backend.onrender.com", "https://llama-app-frontend.vercel.app", "http://secinsights.ai", "http://www.secinsights.ai", "https://secinsights.ai", "https://www.secinsights.ai", "https://solid-palm-tree-xpxr9vpgwwv39655-3000.app.github.dev", "https://solid-palm-tree-xpxr9vpgwwv39655-8000.app.github.dev"]'
     # S3_BUCKET_NAME is the bucket used for the StorageContext of the backend's LlamaIndex chat engine
     - key: S3_BUCKET_NAME
       value: llama-app-backend-prod
