@@ -43,6 +43,8 @@ DEFAULT_CIKS = [
     "200406",
     # iDirect INC
     "0001032575",
+    # Transcore LP Holdings
+    "0001293331"
 ]
 DEFAULT_FILING_TYPES = [
     "10-K",
