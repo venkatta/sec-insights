@@ -15,11 +15,18 @@ def copy_to_s3(dir_path: str, s3_bucket: str = settings.S3_ASSET_BUCKET_NAME):
     """
     Copy all files in dir_path to S3.
     """
+
+    #dir_path = "/workspaces/sec-insights/tests3"
+    #s3_bucket = "llama-app-backend-local-092480147410-asset"
+
+    print("Temp Dir : " + str(dir_path) + " S3 Bucket : " + str(s3_bucket))
     s3 = s3fs.S3FileSystem(
-        key=settings.AWS_KEY,
-        secret=settings.AWS_SECRET,
-        endpoint_url=settings.S3_ENDPOINT_URL,
+        key="AKIARLCB7B7JHHXETT56", #settings.AWS_KEY,
+        secret="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", #settings.AWS_SECRET,
+        #endpoint_url= "https://s3.ap-southeast-1.amazonaws.com"
+        #settings.S3_ENDPOINT_URL,
     )
+    print("S3 Info : " + s3.to_json())
 
     if not (settings.RENDER or s3.exists(s3_bucket)):
         s3.mkdir(s3_bucket)

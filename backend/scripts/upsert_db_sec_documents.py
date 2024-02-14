@@ -48,6 +48,7 @@ async def upsert_document(doc_dir: str, stock: Stock, filing: Filing, url_base: 
             sec_doc_metadata.dict(exclude_none=True)
         )
     }
+    print("Doc : " + str(url_path));
     doc = Document(url=str(url_path), metadata_map=metadata_map)
     async with SessionLocal() as db:
         await crud.upsert_document_by_url(db, doc)
@@ -57,6 +58,9 @@ async def async_upsert_documents_from_filings(url_base: str, doc_dir: str):
     """
     Upserts SEC documents into the database based on what has been downloaded to the filesystem.
     """
+
+    print("[async_upsert_documents_from_filings] URL Base : " + str(url_base) + " Doc Dir : " + str(doc_dir))
+
     filings = get_available_filings(doc_dir)
     stocks_data = PyTickerSymbols()
     stocks_dict = get_stocks_by_symbol(stocks_data.get_all_indices())
@@ -75,8 +79,10 @@ def main_upsert_documents_from_filings(
     Upserts SEC documents into the database based on what has been downloaded to the filesystem.
     """
 
-    asyncio.run(async_upsert_documents_from_filings(url_base, doc_dir))
+    print("[main_upsert_documents_from_filings] URL Base : " + str(url_base) + " Doc Dir : " + str(doc_dir))
 
+    asyncio.run(async_upsert_documents_from_filings(url_base, doc_dir))
+    
 
 if __name__ == "__main__":
     Fire(main_upsert_documents_from_filings)

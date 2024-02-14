@@ -10,6 +10,7 @@ from tqdm.contrib.itertools import product
 from app.core.config import settings
 
 DEFAULT_OUTPUT_DIR = "data/"
+#DEFAULT_OUTPUT_DIR = "/tmp/secinsight/"
 # You can lookup the CIK for a company here: https://www.sec.gov/edgar/searchedgar/companysearch
 DEFAULT_CIKS = [
     # AAPL
@@ -78,7 +79,8 @@ def _convert_to_pdf(output_dir: str):
                     input_path = str(filing_doc.absolute())
                     output_path = str(filing_pdf.absolute())
                     try:
-                        pdfkit.from_file(input_path, output_path, verbose=True)
+                        options = {'enable-local-file-access': None}
+                        pdfkit.from_file(input_path, output_path, verbose=True, options=options)
                     except Exception as e:
                         print(f"Error converting {input_path} to {output_path}: {e}")
 

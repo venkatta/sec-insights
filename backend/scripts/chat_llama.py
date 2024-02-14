@@ -161,6 +161,7 @@ if __name__ == "__main__":
         "--base_url",
         type=str,
         default="http://localhost:8000",
+        #default="https://solid-palm-tree-xpxr9vpgwwv39655-8000.app.github.dev/",
         help="an optional base url for the API endpoints",
     )
     args = parser.parse_args()
