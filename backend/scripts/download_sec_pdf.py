@@ -41,6 +41,8 @@ DEFAULT_CIKS = [
     "1682852",
     # JNJ (Johnson & Johnson)
     "200406",
+    # iDirect INC
+    "0001032575",
 ]
 DEFAULT_FILING_TYPES = [
     "10-K",

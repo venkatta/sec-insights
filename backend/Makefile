@@ -52,13 +52,19 @@ setup_localstack:
 	# alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=${DEFAULT_REGION:-$AWS_DEFAULT_REGION} aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
 	# alias awslocal="AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com "
 	# AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com s3 mb s3://${S3_ASSET_BUCKET_NAME}
+	# echo "<html>LocalStack S3 bucket website is alive 123</html>" > /tmp/index.html
+	# AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3 cp /tmp/index.html s3://${S3_ASSET_BUCKET_NAME}/index.html
+	# rm /tmp/index.html
+	# AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3 website s3://${S3_ASSET_BUCKET_NAME}/ --index-document index.html
+	# AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3api put-bucket-cors --bucket ${S3_ASSET_BUCKET_NAME} --cors-configuration file://./localstack-cors-config.json
+	# echo "LocalStack S3 bucket website is ready. Open http://${S3_ASSET_BUCKET_NAME}.s3-website.localhost.localstack.cloud:4566 in your browser to verify."
 
-	# AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=Ln4jrrMAPHl4l0hDnqfAiAb0Nfqai/8LvuHmqeMM AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3 mb s3://${S3_ASSET_BUCKET_NAME}
-	echo "<html>LocalStack S3 bucket website is alive 123</html>" > /tmp/index.html
-	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3 cp /tmp/index.html s3://${S3_ASSET_BUCKET_NAME}/index.html
+	#AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=us-east-1 aws --endpoint-url=https://s3.us-east-1.amazonaws.com s3 mb s3://${S3_ASSET_BUCKET_NAME}
+	echo "<html>LocalStack S3 bucket website is alive 1234</html>" > /tmp/index.html
+	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=us-east-1 aws --endpoint-url=https://s3.us-east-1.amazonaws.com  s3 cp /tmp/index.html s3://${S3_ASSET_BUCKET_NAME}/index.html
 	rm /tmp/index.html
-	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3 website s3://${S3_ASSET_BUCKET_NAME}/ --index-document index.html
-	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=ap-southeast-1 aws --endpoint-url=https://s3.ap-southeast-1.amazonaws.com  s3api put-bucket-cors --bucket ${S3_ASSET_BUCKET_NAME} --cors-configuration file://./localstack-cors-config.json
+	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=us-east-1 aws --endpoint-url=https://s3.us-east-1.amazonaws.com  s3 website s3://${S3_ASSET_BUCKET_NAME}/ --index-document index.html
+	AWS_ACCESS_KEY_ID=AKIARLCB7B7JHHXETT56 AWS_SECRET_ACCESS_KEY=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 AWS_DEFAULT_REGION=us-east-1 aws --endpoint-url=https://s3.us-east-1.amazonaws.com  s3api put-bucket-cors --bucket ${S3_ASSET_BUCKET_NAME} --cors-configuration file://./localstack-cors-config.json
 	echo "LocalStack S3 bucket website is ready. Open http://${S3_ASSET_BUCKET_NAME}.s3-website.localhost.localstack.cloud:4566 in your browser to verify."
 
 seed_db_based_on_env:
