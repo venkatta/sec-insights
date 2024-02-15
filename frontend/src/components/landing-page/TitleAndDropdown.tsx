@@ -81,7 +81,7 @@ export const TitleAndDropdown = () => {
       </div>
       <div className="mt-28 flex flex-col items-center">
         <div className="text-center text-4xl">
-          <span className="font-bold">Financial Report Analyser </span>
+          <span className="font-bold">Financial Performance Analyser</span>
         </div>
         <div className="mt-4 flex items-center justify-center">
           <div className="w-3/5 text-center font-nunito">
@@ -101,8 +101,7 @@ export const TitleAndDropdown = () => {
       ) : (
         <div className="mt-5 flex h-min w-11/12 max-w-[1200px] flex-col items-center justify-center rounded-lg border-2 bg-sky-50 sm:h-[400px] md:w-9/12 ">
           <div className="p-4 text-center text-xl font-bold">
-            Start your conversation by selecting the documents you want to
-            explore
+            Select the reports to analyse
           </div>
           <div className="h-1/8 flex w-full flex-wrap items-center justify-center font-nunito">
             <div className="m-1 flex w-96 items-center">
@@ -218,26 +217,7 @@ export const TitleAndDropdown = () => {
 
           <div className="h-1/8 mt-2 flex w-full items-center justify-center rounded-lg bg-sky-0">
             <div className="flex flex-wrap items-center justify-center">
-              {isDocumentSelectionEnabled && (
-                <>
-                  <div className="w-48 font-nunito md:ml-8 ">
-                    Add up to{" "}
-                    <span className="font-bold">
-                      {" "}
-                      {MAX_NUMBER_OF_SELECTED_DOCUMENTS -
-                        selectedDocuments.length}
-                    </span>{" "}
-                    {isStartConversationButtonEnabled ? (
-                      <>more docs</>
-                    ) : (
-                      <>docs</>
-                    )}
-                  </div>
-                  <div className="ml-1 font-nunito ">
-                    {isStartConversationButtonEnabled ? <>or</> : <>to</>}{" "}
-                  </div>
-                </>
-              )}
+              
               <div className="md:ml-12">
                 <button
                   disabled={!isStartConversationButtonEnabled}

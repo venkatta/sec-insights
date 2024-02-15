@@ -174,13 +174,7 @@ export default function Conversation() {
               >
                 <BiArrowBack className="mr-1" /> Back to Document Selection
               </button>
-              <button
-                onClick={toggleShareModal}
-                className="mr-3 flex items-center justify-center rounded-full border border-gray-400 p-1 px-3 text-gray-400 hover:bg-gray-15"
-              >
-                <div className="text-xs font-medium">Share</div>
-                <FiShare className="ml-1" size={12} />
-              </button>
+              
             </div>
           </div>
           <div className="flex max-h-[calc(100vh-114px)] w-[44vw] flex-grow flex-col overflow-scroll ">
